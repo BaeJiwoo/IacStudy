@@ -1,0 +1,4 @@
+aws_region         = "ap-northeast-2"
+name               = "iac-study-vpc"
+vpc_cidr           = "10.20.0.0/16"
+availability_zones = ["ap-northeast-2a", "ap-northeast-2c"]

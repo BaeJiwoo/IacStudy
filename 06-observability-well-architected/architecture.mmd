@@ -1,0 +1,20 @@
+flowchart TB
+  users[Users]
+  edge[Route 53 CloudFront WAF]
+  lb[Application Load Balancer]
+  compute[Multi AZ Compute]
+  data[Multi AZ Data]
+  metrics[Metrics Logs Traces]
+  audit[CloudTrail and Config]
+  security[Security Account]
+  archive[Log Archive Account]
+
+  users --> edge
+  edge --> lb
+  lb --> compute
+  compute --> data
+  compute --> metrics
+  data --> metrics
+  audit --> archive
+  metrics --> archive
+  archive --> security

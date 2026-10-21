@@ -1,0 +1,20 @@
+flowchart TB
+  internet[Internet]
+  igw[Internet Gateway]
+
+  subgraph vpc[VPC]
+    subgraph azA[Availability Zone A]
+      publicA[Public Subnet A]
+      appA[Private App Subnet A]
+      dataA[Private Data Subnet A]
+    end
+    subgraph azB[Availability Zone B]
+      publicB[Public Subnet B]
+      appB[Private App Subnet B]
+      dataB[Private Data Subnet B]
+    end
+  end
+
+  internet --> igw
+  igw --> publicA
+  igw --> publicB

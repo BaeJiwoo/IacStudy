@@ -1,0 +1,19 @@
+flowchart TD
+  org[AWS Organization]
+  securityOu[Security OU]
+  workloadOu[Workloads OU]
+  logAccount[Log Archive Account]
+  devAccount[Development Account]
+  prodAccount[Production Account]
+  region[Primary Region]
+  azA[Availability Zone A]
+  azB[Availability Zone B]
+
+  org --> securityOu
+  org --> workloadOu
+  securityOu --> logAccount
+  workloadOu --> devAccount
+  workloadOu --> prodAccount
+  prodAccount --> region
+  region --> azA
+  region --> azB

@@ -1,0 +1,40 @@
+name: terraform-apply
+
+on:
+  workflow_dispatch:
+    inputs:
+      commit_sha:
+        description: Approved commit SHA
+        required: true
+      plan_digest:
+        description: Approved plan SHA256 digest
+        required: true
+      environment:
+        description: Deployment environment
+        required: true
+        type: choice
+        options: [dev, prod]
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: terraform-apply-${{ inputs.environment }}
+  cancel-in-progress: false
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.commit_sha }}
+
+      # TODO: Download the saved plan from the trusted Plan workflow.
+      # TODO: Recompute SHA256 and compare it with inputs.plan_digest.
+      # TODO: Configure AWS credentials with OIDC and an environment-specific role.
+      # TODO: Run terraform init and apply the exact saved plan.
+      # TODO: Verify deployed resources and record the deployment result.

@@ -1,0 +1,13 @@
+flowchart LR
+  user[User]
+  dns[Route 53]
+  edge[CloudFront and WAF]
+  lb[Application Load Balancer]
+  targetA[Compute Target AZ A]
+  targetB[Compute Target AZ B]
+
+  user --> dns
+  dns --> edge
+  edge --> lb
+  lb --> targetA
+  lb --> targetB

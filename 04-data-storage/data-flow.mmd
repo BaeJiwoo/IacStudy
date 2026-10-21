@@ -1,0 +1,16 @@
+flowchart LR
+  app[Application]
+  database[Transaction Database]
+  object[Receipt Object Storage]
+  cache[Session Cache]
+  backup[Backup Vault]
+  kms[KMS Key]
+
+  app --> database
+  app --> object
+  app --> cache
+  database --> backup
+  object --> backup
+  kms -. encrypts .-> database
+  kms -. encrypts .-> object
+  kms -. encrypts .-> backup

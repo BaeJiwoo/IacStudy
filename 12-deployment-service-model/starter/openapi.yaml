@@ -1,0 +1,67 @@
+openapi: 3.0.3
+info:
+  title: IaC Deployment Service
+  version: 0.1.0
+paths:
+  /deployments:
+    post:
+      summary: Create a deployment request
+      parameters:
+        - name: Idempotency-Key
+          in: header
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/DeploymentRequest"
+      responses:
+        "202":
+          description: Request accepted
+  /deployments/{deploymentId}:
+    get:
+      summary: Get deployment status
+      parameters:
+        - name: deploymentId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Current deployment state
+components:
+  schemas:
+    DeploymentRequest:
+      type: object
+      required:
+        - project
+        - environment
+        - accountId
+        - region
+        - module
+        - moduleVersion
+        - inputs
+      properties:
+        project:
+          type: string
+          pattern: "^[a-z][a-z0-9-]+$"
+        environment:
+          type: string
+          enum: [dev, staging, prod]
+        accountId:
+          type: string
+          pattern: "^[0-9]{12}$"
+        region:
+          type: string
+          enum: [ap-northeast-2]
+        module:
+          type: string
+        moduleVersion:
+          type: string
+        inputs:
+          type: object
+          additionalProperties: true

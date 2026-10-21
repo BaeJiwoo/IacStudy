@@ -1,0 +1,20 @@
+apiVersion: platform.example.io/v1
+kind: EcsService
+metadata:
+  name: payment-api
+  owner: payment-team
+  costCenter: fintech
+spec:
+  environment: dev
+  accountId: "111122223333"
+  region: ap-northeast-2
+  moduleVersion: "1.0.0"
+  compute:
+    cpu: 512
+    memory: 1024
+    desiredCount: 2
+  network:
+    public: false
+  observability:
+    logRetentionDays: 30
+    alarms: true

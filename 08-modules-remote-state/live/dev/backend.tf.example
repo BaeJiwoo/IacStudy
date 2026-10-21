@@ -1,0 +1,9 @@
+terraform {
+  backend "s3" {
+    bucket       = "replace-with-your-state-bucket"
+    key          = "network/dev/terraform.tfstate"
+    region       = "ap-northeast-2"
+    encrypt      = true
+    use_lockfile = true
+  }
+}

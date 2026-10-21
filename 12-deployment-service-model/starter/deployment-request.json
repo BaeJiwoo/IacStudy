@@ -1,0 +1,14 @@
+{
+  "project": "payment-api",
+  "environment": "dev",
+  "accountId": "111122223333",
+  "region": "ap-northeast-2",
+  "module": "ecs-service",
+  "moduleVersion": "1.0.0",
+  "inputs": {
+    "cpu": 512,
+    "memory": 1024,
+    "desiredCount": 2,
+    "public": false
+  }
+}

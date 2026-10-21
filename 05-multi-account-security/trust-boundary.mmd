@@ -1,0 +1,19 @@
+flowchart LR
+  human[Engineer]
+  identity[IAM Identity Center]
+  ci[CI OIDC Identity]
+  tooling[Tooling Account Role]
+  dev[Development Deploy Role]
+  prod[Production Deploy Role]
+  logs[Log Archive Account]
+  security[Security Account]
+
+  human --> identity
+  identity --> dev
+  identity --> prod
+  ci --> tooling
+  tooling --> dev
+  tooling --> prod
+  dev --> logs
+  prod --> logs
+  logs --> security

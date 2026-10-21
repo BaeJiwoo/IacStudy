@@ -1,0 +1,8 @@
+* text=auto eol=lf
+*.md text diff=markdown
+*.tf text
+*.tfvars text
+*.hcl text
+*.yaml text
+*.yml text
+

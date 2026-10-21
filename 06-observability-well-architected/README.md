@@ -15,6 +15,8 @@
 3. [review.md](./review.md)에 위험과 개선 우선순위를 기록한다.
 4. [architecture.mmd](./architecture.mmd)에 지금까지 설계한 모든 계층을 합친다.
 
+[keywords.md](./keywords.md), [assignment.md](./assignment.md), [tests/README.md](./tests/README.md)와 [checklist.md](./checklist.md)를 사용하고 결과는 `submission/`에 기록한다.
+
 ## 과제
 
 결제 API의 사용자 오류율, 지연 시간, 처리량과 리소스 포화도를 측정한다. CloudTrail과 AWS Config를 이용해 구성 변경을 추적하고, 보안 로그를 중앙 계정으로 수집한다. 완성된 아키텍처를 Well Architected 여섯 Pillar로 검토한다.

@@ -1,0 +1,30 @@
+module "workload_account" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "replace-with-unique-email@example.com"
+    AccountName               = "iac-study-workload-dev"
+    ManagedOrganizationalUnit = "Workloads/Development"
+    SSOUserEmail              = "replace-with-owner@example.com"
+    SSOUserFirstName          = "Platform"
+    SSOUserLastName           = "Owner"
+  }
+
+  account_tags = {
+    Environment = "dev"
+    Owner       = "platform-team"
+    CostCenter  = "training"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "replace-with-requester"
+    change_reason       = "IaC study sandbox workload account"
+  }
+
+  custom_fields = {
+    data_classification = "internal"
+    business_unit       = "engineering"
+  }
+
+  account_customizations_name = "workload-baseline"
+}

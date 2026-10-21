@@ -1,0 +1,40 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: Service Catalog portfolio and secure bucket product
+
+Parameters:
+  ProductTemplateUrl:
+    Type: String
+    Description: HTTPS URL of product-template.yaml in an artifact bucket
+
+Resources:
+  InfrastructurePortfolio:
+    Type: AWS::ServiceCatalog::Portfolio
+    Properties:
+      DisplayName: Approved Infrastructure Products
+      ProviderName: Cloud Platform Team
+      Description: Versioned infrastructure products approved for workloads
+
+  SecureBucketProduct:
+    Type: AWS::ServiceCatalog::CloudFormationProduct
+    Properties:
+      Name: secure-s3-bucket
+      Owner: Cloud Platform Team
+      Description: Private, encrypted and versioned S3 bucket
+      ProvisioningArtifactParameters:
+        - Name: v1.0.0
+          Description: Initial secure bucket baseline
+          Info:
+            LoadTemplateFromURL: !Ref ProductTemplateUrl
+          Type: CLOUD_FORMATION_TEMPLATE
+
+  PortfolioProductAssociation:
+    Type: AWS::ServiceCatalog::PortfolioProductAssociation
+    Properties:
+      PortfolioId: !Ref InfrastructurePortfolio
+      ProductId: !Ref SecureBucketProduct
+
+Outputs:
+  PortfolioId:
+    Value: !Ref InfrastructurePortfolio
+  ProductId:
+    Value: !Ref SecureBucketProduct

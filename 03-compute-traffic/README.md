@@ -13,6 +13,8 @@
 3. [capacity-plan.md](./capacity-plan.md)에 정상 및 AZ 장애 시 용량을 계산한다.
 4. [request-flow.mmd](./request-flow.mmd)에 DNS부터 Compute까지 요청 흐름을 완성한다.
 
+[keywords.md](./keywords.md), [assignment.md](./assignment.md), [tests/README.md](./tests/README.md)와 [checklist.md](./checklist.md)를 사용하고 결과는 `submission/`에 기록한다.
+
 ## 과제
 
 결제 API는 Container Image로 배포되고 평상시 초당 요청 수는 100, 최대는 500이다. 한 AZ가 중단돼도 정상 트래픽을 처리해야 하며 운영 인력은 Kubernetes를 직접 관리할 여유가 없다.

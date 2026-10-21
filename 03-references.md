@@ -24,6 +24,9 @@ AFT는 AWS 계정 프로비저닝과 계정별 표준 설정을 자동화하는 
 
 ## Terraform
 
+- [기존 Resource Import](https://developer.hashicorp.com/terraform/language/import)
+- [Module Refactoring](https://developer.hashicorp.com/terraform/language/modules/develop/refactoring)
+- [Lifecycle Meta Argument](https://developer.hashicorp.com/terraform/language/meta-arguments/lifecycle)
 - [Terraform S3 Backend](https://developer.hashicorp.com/terraform/language/backend/s3)
 - [Terraform Test 명령](https://developer.hashicorp.com/terraform/cli/commands/test)
 - [Terraform Testing 기능](https://developer.hashicorp.com/terraform/cli/test)
@@ -37,11 +40,23 @@ AFT는 AWS 계정 프로비저닝과 계정별 표준 설정을 자동화하는 
 
 ## CloudFormation과 CDK
 
+- [CloudFormation 작동 방식](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-overview.html)
+- [CloudFormation Template 구조](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html)
 - [CloudFormation Change Sets](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-changesets.html)
 - [CloudFormation Drift Detection](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html)
 - [CloudFormation StackSets Drift Detection](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html)
+- [CloudFormation Guard](https://docs.aws.amazon.com/cfn-guard/latest/ug/what-is-guard.html)
+- [CloudFormation Hooks](https://docs.aws.amazon.com/cloudformation-cli/latest/hooks-userguide/what-is-cloudformation-hooks.html)
 - [AWS CDK Stack Synthesis](https://docs.aws.amazon.com/cdk/v2/guide/configure-synth.html)
 - [AWS CDK 배포 과정](https://docs.aws.amazon.com/cdk/v2/guide/deploy.html)
+- [AWS SAM 사용](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/chapter-using-sam.html)
+
+## 조직 플랫폼
+
+- [Service Catalog 개념](https://docs.aws.amazon.com/servicecatalog/latest/adminguide/what-is_concepts.html)
+- [Service Catalog Constraint](https://docs.aws.amazon.com/servicecatalog/latest/adminguide/constraints.html)
+- [Control Tower 개요](https://docs.aws.amazon.com/controltower/latest/userguide/what-is-control-tower.html)
+- [Account Factory for Terraform](https://docs.aws.amazon.com/controltower/latest/userguide/aft-overview.html)
 
 ## CI/CD와 정책
 
@@ -53,9 +68,9 @@ AFT는 AWS 계정 프로비저닝과 계정별 표준 설정을 자동화하는 
 
 1. Region과 Availability Zone, VPC와 Well Architected Framework
 2. 멀티 계정 전략과 AWS Security Reference Architecture
-3. IAM OIDC 역할
-4. Terraform S3 Backend와 Terraform Test
-5. Terraform 보안 권장사항
-6. CloudFormation Change Sets와 Drift Detection
-7. CI/CD 및 Checkov 정책 검사 패턴
-8. AFT와 Control Tower Control 관리
+3. CloudFormation Template, Change Set, StackSets와 Drift Detection
+4. CDK Synthesis와 AWS SAM
+5. Terraform 기본, Import, Refactoring과 S3 Backend
+6. IAM OIDC 역할과 Terraform 보안 권장사항
+7. CI/CD, Guard와 Checkov 정책 검사
+8. Service Catalog, AFT와 Control Tower Control 관리

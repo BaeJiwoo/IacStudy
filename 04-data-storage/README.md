@@ -14,6 +14,8 @@
 3. [recovery-plan.md](./recovery-plan.md)에 RTO, RPO와 복원 절차를 작성한다.
 4. [data-flow.mmd](./data-flow.mmd)에 데이터와 암호화 경계를 표시한다.
 
+[keywords.md](./keywords.md), [assignment.md](./assignment.md), [tests/README.md](./tests/README.md)와 [checklist.md](./checklist.md)를 사용하고 결과는 `submission/`에 기록한다.
+
 ## 과제
 
 결제 API의 거래 데이터, 영수증 파일, Container 공유 파일과 Session Cache를 저장할 서비스를 선택한다. 거래 데이터의 목표 RPO는 5분, 목표 RTO는 30분으로 가정한다.

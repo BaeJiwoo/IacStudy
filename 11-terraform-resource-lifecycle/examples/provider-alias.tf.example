@@ -1,0 +1,12 @@
+provider "aws" {
+  alias  = "secondary"
+  region = "ap-northeast-1"
+}
+
+module "regional_baseline" {
+  source = "../modules/regional-baseline"
+
+  providers = {
+    aws = aws.secondary
+  }
+}

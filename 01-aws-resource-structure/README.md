@@ -9,6 +9,8 @@ AWS 인프라를 코드로 만들기 전에 Organization, Account, Region, Avail
 3. [region-decision.md](./region-decision.md)에 서비스용 Region 선택 근거를 작성한다.
 4. [architecture.mmd](./architecture.mmd)를 완성해 AWS 리소스 계층을 표현한다.
 
+[keywords.md](./keywords.md), [assignment.md](./assignment.md), [tests/README.md](./tests/README.md)와 [checklist.md](./checklist.md)를 사용하고 결과는 `submission/`에 기록한다.
+
 ## 과제
 
 서울 사용자를 대상으로 하는 결제 API를 가정한다. Production과 Development 환경을 분리하고, 단일 Availability Zone 장애 시 서비스를 유지해야 한다. 데이터는 대한민국 Region에 저장해야 한다.

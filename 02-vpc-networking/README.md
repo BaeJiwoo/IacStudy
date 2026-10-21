@@ -13,6 +13,8 @@
 3. [packet-path.md](./packet-path.md)에 Ingress와 Egress 경로를 작성한다.
 4. [architecture.mmd](./architecture.mmd)에 Route Table과 보안 경계를 추가한다.
 
+[keywords.md](./keywords.md), [assignment.md](./assignment.md), [tests/README.md](./tests/README.md)와 [checklist.md](./checklist.md)를 사용하고 결과는 `submission/`에 기록한다.
+
 ## 과제
 
 결제 API를 위한 VPC를 설계한다. 두 개의 Availability Zone에 Public, Private App, Private Data Subnet을 각각 배치한다. 애플리케이션은 인터넷에서 직접 접근할 수 없고, S3와 Secrets Manager에 접근해야 한다.

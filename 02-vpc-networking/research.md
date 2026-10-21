@@ -8,6 +8,9 @@
 - [Network ACL](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html)
 - [VPC Endpoint](https://docs.aws.amazon.com/vpc/latest/privatelink/concepts.html)
 - [확장 가능한 멀티 VPC 네트워크](https://docs.aws.amazon.com/whitepapers/latest/building-scalable-secure-multi-vpc-network-infrastructure/)
+- [VPC IPAM](https://docs.aws.amazon.com/vpc/latest/ipam/what-it-is-ipam.html)
+- [Site to Site VPN](https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html)
+- [Direct Connect](https://docs.aws.amazon.com/directconnect/latest/UserGuide/Welcome.html)
 
 ## 조사 질문
 
@@ -18,3 +21,5 @@
 5. VPC Peering과 Transit Gateway는 어떤 규모에서 선택이 달라지는가
 6. PrivateLink가 전체 네트워크 연결 대신 서비스 단위 연결에 적합한 이유는 무엇인가
 7. Cross AZ 데이터 전송과 NAT Gateway 비용을 어떻게 줄일 수 있는가
+8. VPN과 Direct Connect를 함께 사용할 때 암호화, 가용성과 Failover를 어떻게 설계하는가
+9. 여러 Account와 Region의 CIDR 중복을 IPAM으로 어떻게 예방하는가

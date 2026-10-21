@@ -7,6 +7,8 @@
 - [AWS Security Reference Architecture](https://docs.aws.amazon.com/prescriptive-guidance/latest/security-reference-architecture/introduction.html)
 - [AWS Control Tower 멀티 계정 전략](https://docs.aws.amazon.com/controltower/latest/userguide/aws-multi-account-landing-zone.html)
 - [IAM 권장사항](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html)
+- [Resource Control Policy](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_rcps.html)
+- [IAM Access Analyzer](https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html)
 
 ## 조사 질문
 
@@ -16,3 +18,5 @@
 4. Security 계정과 Log Archive 계정을 분리하는 이유는 무엇인가
 5. 사람의 역할과 배포 역할을 분리해야 하는 이유는 무엇인가
 6. Break Glass 역할은 어떤 조건에서 어떻게 감사해야 하는가
+7. SCP와 RCP가 각각 Identity 기반 요청과 Resource Policy의 최대 권한을 어떻게 제한하는가
+8. Access Analyzer로 외부 접근과 미사용 권한을 어떻게 찾아낼 것인가

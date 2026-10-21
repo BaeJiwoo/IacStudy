@@ -1,0 +1,19 @@
+{
+  "name": "iac-study-cdk-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "synth": "cdk synth",
+    "diff": "cdk diff"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "^2",
+    "constructs": "^10"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "aws-cdk": "^2",
+    "typescript": "^5"
+  }
+}

@@ -43,3 +43,19 @@ override.tf.json
 .DS_Store
 Thumbs.db
 
+# Node.js and AWS CDK generated files
+**/node_modules/
+**/dist/
+**/cdk.out/
+
+# AWS SAM generated files
+**/.aws-sam/
+samconfig.toml
+
+# Local CloudFormation packaging and output
+packaged.yaml
+change-set-output.json
+
+# Python generated files
+**/__pycache__/
+*.pyc

@@ -1,0 +1,48 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: Secure S3 bucket product for Service Catalog
+
+Parameters:
+  ProductName:
+    Type: String
+    AllowedPattern: "^[a-z0-9-]{3,30}$"
+    Description: Short workload name used for tags
+  DataClassification:
+    Type: String
+    AllowedValues:
+      - public
+      - internal
+      - confidential
+
+Resources:
+  ProductBucket:
+    Type: AWS::S3::Bucket
+    DeletionPolicy: Retain
+    UpdateReplacePolicy: Retain
+    Properties:
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+      OwnershipControls:
+        Rules:
+          - ObjectOwnership: BucketOwnerEnforced
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+      VersioningConfiguration:
+        Status: Enabled
+      Tags:
+        - Key: ProductName
+          Value: !Ref ProductName
+        - Key: DataClassification
+          Value: !Ref DataClassification
+        - Key: ManagedBy
+          Value: service-catalog
+
+Outputs:
+  BucketName:
+    Value: !Ref ProductBucket
+  BucketArn:
+    Value: !GetAtt ProductBucket.Arn

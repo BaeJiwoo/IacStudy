@@ -1,0 +1,9 @@
+moved {
+  from = aws_s3_bucket.imported
+  to   = aws_s3_bucket.logs
+}
+
+moved {
+  from = aws_s3_bucket_public_access_block.imported
+  to   = aws_s3_bucket_public_access_block.logs
+}
